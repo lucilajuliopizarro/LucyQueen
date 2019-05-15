@@ -3,18 +3,25 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WaiterComponent } from './waiter/waiter.component';
+import { PedidoComponent } from './pedido/pedido.component';
+import { CocinaComponent } from './cocina/cocina.component';
+  
 
-@NgModule({
-  declarations: [
+@NgModule({//decorador que nos permite configurar el modulo
+  declarations: [ //nos permite dentro de este declarar las directivas o componentes,para registrar y utilizar en la aplicacion de forma global
     AppComponent,
-    WaiterComponent
+    PedidoComponent,
+    CocinaComponent
+    
   ],
-  imports: [
+  imports: [// nos permite declarar diferentes modulo y funcionalidades, para cargarlo en la aplicacion 
     BrowserModule,
     AppRoutingModule
+    
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [],//se cargan ciertos servicios y configuraciones
+  bootstrap: [// se carga el componente o se indica el componente principal con el modulo que va a lansarce
+    AppComponent
+  ]
 })
 export class AppModule { }
