@@ -1,6 +1,38 @@
-<h2 style="color:blue">{{ number_component }}</h2>
-<p>{{ menu_breakfast }}</p>
-<p>
-  pedido works!
-</p>
-<button (click)="cambiarMenu()">cambiar menu</button>
+<!-- <h2 style="color:blue">{{ number_component }}</h2> -->
+<h2 style="color:brown">
+  {{ number_component }}
+</h2>
+<button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+  {{ menu_breakfast }}
+</button>
+
+<button (click)="cambiarMenu()">CAMBIAR ACOMPAÑAMIENTOS</button>
+<div>
+  <button
+    (click)="ocultar(true)"
+    *ngIf="!mostrar"
+    type="button"
+    class="btn btn-dark btn-lg"
+    style=" margin: 1rem"
+  >
+    TOMAR PEDIDO
+  </button>
+  <button
+    (click)="ocultar(false)"
+    *ngIf="mostrar"
+    type="button"
+    class="btn btn-dark btn-lg"
+    style=" margin: 1rem"
+  >
+    CERRAR PEDIDO
+  </button>
+
+  <button type="button" class="btn btn-dark btn-lg" style=" margin: 1rem">
+    COCINA
+  </button>
+  <button type="button" class="btn btn-dark btn-lg" style=" margin: 1rem">
+    DESPACHO
+  </button>
+</div>
+<app-cocina *ngIf="mostrar"></app-cocina>
+<app-tomar-pedido *ngIf="!mostrar"></app-tomar-pedido>

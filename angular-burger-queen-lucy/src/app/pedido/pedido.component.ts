@@ -10,9 +10,8 @@ export class PedidoComponent implements OnInit, DoCheck, OnDestroy {
   public menu_breakfast: string;
 
   constructor() {
-    this.number_component = 'Pedido listo';
-    this.menu_breakfast =
-      'Cafe americano,Cafe con leche,Sandwich de jamón y queso,Jugo natural';
+    this.number_component = 'ACOMPAÑAMIENTOS';
+    this.menu_breakfast = 'PAPAS FRITAS';
   }
 
   ngOnInit() {
@@ -29,6 +28,6 @@ export class PedidoComponent implements OnInit, DoCheck, OnDestroy {
   }
   cambiarMenu() {
     //aqui declaro la funcion cambiar menu y la llamo en pedido.component.html
-    this.menu_breakfast = 'huevo en su paila con te o cafe';
+    this.menu_breakfast = 'ONION RINGS';
   }
 }
