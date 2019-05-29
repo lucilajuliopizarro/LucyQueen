@@ -1,17 +1,22 @@
 import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core'; //se importa OnInit ya que este es un hook del ciclo de vida de un componente
+import { Pedido } from '../models/pedido';
+import { MenuService } from '../services/menu.service';
 
 @Component({
   selector: 'app-pedido',
   templateUrl: './pedido.component.html', //template solo es plantilla en linea templateUrl es plantilla separada en un fichero html
-  styleUrls: ['./pedido.component.css']
+  styleUrls: ['./pedido.component.css'],
+  providers: [MenuService]
 })
 export class PedidoComponent implements OnInit, DoCheck, OnDestroy {
   public number_component: string;
   public menu_breakfast: string;
+  public pedido: Array<Pedido>;
 
-  constructor() {
+  constructor(public _menuService: MenuService) {
     this.number_component = 'ACOMPAÑAMIENTOS';
     this.menu_breakfast = 'PAPAS FRITAS';
+    this.pedido = new Array();
   }
 
   ngOnInit() {

@@ -34,5 +34,8 @@
     DESPACHO
   </button>
 </div>
+<p *ngFor="let item of _menuService.pedido">
+  {{ item | json }}
+</p>
 <app-cocina *ngIf="mostrar"></app-cocina>
 <app-tomar-pedido *ngIf="!mostrar"></app-tomar-pedido>
