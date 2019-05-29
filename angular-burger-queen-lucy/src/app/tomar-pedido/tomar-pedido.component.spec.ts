@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TomarPedidoComponent } from './tomar-pedido.component';
+import { FormsModule } from '@angular/forms';
 
 describe('TomarPedidoComponent', () => {
   let component: TomarPedidoComponent;
@@ -8,9 +9,9 @@ describe('TomarPedidoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TomarPedidoComponent ]
-    })
-    .compileComponents();
+      imports: [FormsModule],
+      declarations: [TomarPedidoComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +20,7 @@ describe('TomarPedidoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('deberia mostrar el nombre', () => {
     expect(component).toBeTruthy();
   });
 });
