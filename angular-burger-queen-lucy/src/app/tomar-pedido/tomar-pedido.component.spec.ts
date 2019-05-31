@@ -21,6 +21,6 @@ describe('TomarPedidoComponent', () => {
   });
 
   it('deberia mostrar el nombre', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy(); 
   });
 });
