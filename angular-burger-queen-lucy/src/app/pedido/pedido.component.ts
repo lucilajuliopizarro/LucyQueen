@@ -12,6 +12,8 @@ export class PedidoComponent implements OnInit, DoCheck, OnDestroy {
   public number_component: string;
   public menu_breakfast: string;
   public pedido: Array<Pedido>;
+  mirar = true;
+  ver = true;
 
   constructor(public _menuService: MenuService) {
     this.number_component = 'ACOMPAÑAMIENTOS';

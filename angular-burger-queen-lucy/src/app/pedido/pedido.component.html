@@ -1,41 +1,96 @@
 <!-- <h2 style="color:blue">{{ number_component }}</h2> -->
 <h2 style="color:brown">
-  {{ number_component }}
+    {{ number_component }}
 </h2>
 <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
   {{ menu_breakfast }}
 </button>
+<div>
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="['Pedido']"></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="['TomarPedido']"></a>
+    </li>
+</div>
 
 <button (click)="cambiarMenu()">CAMBIAR ACOMPAÑAMIENTOS</button>
 <div>
-  <button
-    (click)="ocultar(true)"
-    *ngIf="!mostrar"
-    type="button"
-    class="btn btn-dark btn-lg"
-    style=" margin: 1rem"
-  >
+    <button (click)="ocultar(true)" *ngIf="!mostrar" type="button" class="btn btn-dark btn-lg" style=" margin: 1rem">
     TOMAR PEDIDO
   </button>
-  <button
-    (click)="ocultar(false)"
-    *ngIf="mostrar"
-    type="button"
-    class="btn btn-dark btn-lg"
-    style=" margin: 1rem"
-  >
+    <button (click)="ocultar(false)" *ngIf="mostrar" type="button" class="btn btn-dark btn-lg" style=" margin: 1rem">
     CERRAR PEDIDO
   </button>
 
-  <button type="button" class="btn btn-dark btn-lg" style=" margin: 1rem">
-    COCINA
+    <button (click)="mirar = !mirar" class="btn btn-dark btn-lg" style=" margin: 1rem">
+    DESAYUNO
   </button>
-  <button type="button" class="btn btn-dark btn-lg" style=" margin: 1rem">
-    DESPACHO
+    <button (click)="ver = !ver" class="btn btn-dark btn-lg" style=" margin: 1rem">
+    ALMUERZO
   </button>
 </div>
+<!-- ------------------------desayuno-------------------------------- -->
+<div *ngIf="mirar">
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    CAFE AMERICANO $500
+  </button>
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    CAFE CON LECHE $700
+  </button>
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    SANDWICH JAMON QUESO $1000
+  </button>
+
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    JUGO NATURAL $700
+  </button>
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    AGUA 500/cc $500
+  </button>
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    AGUA 750/cc $800
+  </button>
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    GASEOSA 500/cc $700
+  </button>
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    GASEOSA 750/cc $1000
+  </button>
+</div>
+<!-- -----------------------almuerzo---------------------------- -->
+<div *ngIf="ver">
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    HAMBURGUESA SIMPLE $1500
+  </button>
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    HAMBURGUESA DOBLE $2500
+  </button>
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    PAPAS FRITAS $500
+  </button>
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    ONION RINGS $500
+  </button>
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    JUGO NATURAL $700
+  </button>
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    AGUA 500/cc $500
+  </button>
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    AGUA 750/cc $800
+  </button>
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    GASEOSA 500/cc $700
+  </button>
+    <button type="button" class="btn btn-warning btn-lg" style=" margin: 1rem">
+    GASEOSA 750/cc $1000
+  </button>
+</div>
+<!-- -------------------------------------------- -->
 <p *ngFor="let item of _menuService.pedido">
-  {{ item | json }}
+    {{ item | json }}
 </p>
 <app-cocina *ngIf="mostrar"></app-cocina>
 <app-tomar-pedido *ngIf="!mostrar"></app-tomar-pedido>

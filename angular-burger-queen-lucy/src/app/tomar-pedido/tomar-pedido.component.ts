@@ -14,11 +14,7 @@ export class TomarPedidoComponent implements OnInit, DoCheck, OnDestroy {
     id: 1,
     name: 'nombre cliente'
   };
-  constructor() {
-    //this.menu_mesero = 'MESERO/DESAYUNO';
-    //this.menu_meseroListo =
-    // 'CAFE AMERICANO $500,CAFE CON LECHE $700,SANDWICH JAMON QUESO $1000,JUGO NATURAL $700,';
-  }
+  constructor() {}
 
   ngOnInit() {
     // se ejecuta al inicio
