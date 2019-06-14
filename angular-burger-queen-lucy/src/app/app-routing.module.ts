@@ -9,9 +9,9 @@ const routes: Routes = [
   // { path: 'pedido', component: PedidoComponent },
   // { path: 'tomar_pedido', component: TomarPedidoComponent },
   // { path: '**', pathMatch: 'full', redirectTo: '' }
-  { path: 'cocina/id', component: CocinaComponent },
-  { path: 'despacho', component: DespachoComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'despacho' }
+  { path: 'despacho/id', component: CocinaComponent },
+  { path: 'cocina', component: DespachoComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'cocina' }
 ];
 
 @NgModule({
