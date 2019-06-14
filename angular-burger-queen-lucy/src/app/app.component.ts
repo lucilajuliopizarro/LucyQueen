@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+//import { modelsjsonMenu } from './models/modelsJsonMenu';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'] //estos estilo solo afectan a la plantilla asociada a este componente './app.component.html'
 })
 export class AppComponent {
-  title = 'Bienvenidos al Hamburgezon!!';
+  title = 'BIENVENIDOS BURGER QUEEN INICIA TU PEDIDO!!';
   public mostrar: boolean = true;
 
+  constructor() {}
   ocultar(value) {
     this.mostrar = value;
   }

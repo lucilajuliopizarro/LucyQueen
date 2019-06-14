@@ -1,18 +1,24 @@
 import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core'; //se importa OnInit ya que este es un hook del ciclo de vida de un componente
+import { Pedido } from '../models/pedido';
+import { MenuService } from '../services/menu.service';
 
 @Component({
   selector: 'app-pedido',
   templateUrl: './pedido.component.html', //template solo es plantilla en linea templateUrl es plantilla separada en un fichero html
-  styleUrls: ['./pedido.component.css']
+  styleUrls: ['./pedido.component.css'],
+  providers: [MenuService]
 })
 export class PedidoComponent implements OnInit, DoCheck, OnDestroy {
   public number_component: string;
   public menu_breakfast: string;
+  public pedido: Array<Pedido>;
+  mirar = true;
+  ver = true;
 
-  constructor() {
-    this.number_component = 'Pedido listo';
-    this.menu_breakfast =
-      'Cafe americano,Cafe con leche,Sandwich de jamón y queso,Jugo natural';
+  constructor(public _menuService: MenuService) {
+    this.number_component = 'ACOMPAÑAMIENTOS';
+    this.menu_breakfast = 'PAPAS FRITAS';
+    this.pedido = new Array();
   }
 
   ngOnInit() {
@@ -29,6 +35,6 @@ export class PedidoComponent implements OnInit, DoCheck, OnDestroy {
   }
   cambiarMenu() {
     //aqui declaro la funcion cambiar menu y la llamo en pedido.component.html
-    this.menu_breakfast = 'huevo en su paila con te o cafe';
+    this.menu_breakfast = 'ONION RINGS';
   }
 }
